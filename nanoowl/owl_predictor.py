@@ -440,7 +440,7 @@ class OwlPredictor(torch.nn.Module):
             onnx_path = os.path.join(onnx_dir, "image_encoder.onnx")
             self.export_image_encoder_onnx(onnx_path, onnx_opset=onnx_opset)
 
-        args = ["/usr/src/tensorrt/bin/trtexec"]
+        args = ["trtexec"]
     
         args.append(f"--onnx={onnx_path}")
         args.append(f"--saveEngine={engine_path}")
